@@ -46,7 +46,7 @@ header p {
 }
 
 /* Timeline Section - Horizontal Scroll on Desktop */
-section {
+.timeline-section {
   display: flex;
   gap: 30px;
   padding: 60px 40px;
@@ -62,25 +62,25 @@ section {
 }
 
 /* Webkit scrollbar styling */
-section::-webkit-scrollbar {
+.timeline-section::-webkit-scrollbar {
   height: 10px;
 }
 
-section::-webkit-scrollbar-track {
+.timeline-section::-webkit-scrollbar-track {
   background: #e0e0e0;
 }
 
-section::-webkit-scrollbar-thumb {
+.timeline-section::-webkit-scrollbar-thumb {
   background: #0071C5;
   border-radius: 5px;
 }
 
-section::-webkit-scrollbar-thumb:hover {
+.timeline-section::-webkit-scrollbar-thumb:hover {
   background: #0054A6;
 }
 
 /* Timeline Cards */
-section > div {
+.timeline-section > div {
   /* Fixed width for horizontal layout */
   min-width: 300px;
   max-width: 300px;
@@ -103,27 +103,27 @@ section > div {
 }
 
 /* Card Hover Effect - Lift and Shadow */
-section > div:hover {
+.timeline-section > div:hover {
   transform: translateY(-10px);
   box-shadow: 0 12px 24px rgba(0, 113, 197, 0.2);
 }
 
 /* Year Styling */
-section > div h2 {
+.timeline-section > div h2 {
   font-size: 2rem;
   color: #0071C5;
   font-weight: 700;
 }
 
 /* Title Styling */
-section > div h3 {
+.timeline-section > div h3 {
   font-size: 1.3rem;
   color: #333;
   font-weight: 600;
 }
 
 /* Image Placeholder Styling */
-section > div img {
+.timeline-section > div img {
   width: 100%;
   height: 180px;
   object-fit: cover;
@@ -132,7 +132,7 @@ section > div img {
 }
 
 /* Description Text - Hidden by Default, Revealed on Hover */
-section > div p {
+.timeline-section > div p {
   font-size: 0.95rem;
   color: #555;
   line-height: 1.7;
@@ -144,7 +144,7 @@ section > div p {
 }
 
 /* Reveal Text on Hover */
-section > div:hover p {
+.timeline-section > div:hover p {
   max-height: 300px;
   opacity: 1;
   margin-top: 8px;
@@ -163,7 +163,7 @@ body > p {
 /* Mobile Responsive - Vertical Stack */
 @media (max-width: 768px) {
   /* Change to vertical layout */
-  section {
+  .timeline-section {
     flex-direction: column;
     overflow-x: hidden;
     overflow-y: auto;
@@ -171,13 +171,13 @@ body > p {
   }
   
   /* Full width cards on mobile */
-  section > div {
+  .timeline-section > div {
     min-width: 100%;
     max-width: 100%;
   }
   
   /* Always show text on mobile */
-  section > div p {
+  .timeline-section > div p {
     max-height: none;
     opacity: 1;
     margin-top: 8px;
