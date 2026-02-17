@@ -1,0 +1,194 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header / Hero Section */
+header {
+  background: linear-gradient(135deg, #0071C5 0%, #0054A6 100%);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+header div {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+header img {
+  width: 120px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+header p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  opacity: 0.95;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Timeline Section - Horizontal Scroll on Desktop */
+section {
+  display: flex;
+  gap: 30px;
+  padding: 60px 40px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  /* Smooth scrolling */
+  scroll-behavior: smooth;
+  /* Scroll snap for smooth card navigation */
+  scroll-snap-type: x mandatory;
+  /* Custom scrollbar styling */
+  scrollbar-width: thin;
+  scrollbar-color: #0071C5 #e0e0e0;
+}
+
+/* Webkit scrollbar styling */
+section::-webkit-scrollbar {
+  height: 10px;
+}
+
+section::-webkit-scrollbar-track {
+  background: #e0e0e0;
+}
+
+section::-webkit-scrollbar-thumb {
+  background: #0071C5;
+  border-radius: 5px;
+}
+
+section::-webkit-scrollbar-thumb:hover {
+  background: #0054A6;
+}
+
+/* Timeline Cards */
+section > div {
+  /* Fixed width for horizontal layout */
+  min-width: 300px;
+  max-width: 300px;
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Flexbox for card content */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  /* Transition for smooth hover effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Border accent */
+  border-top: 4px solid #0071C5;
+  position: relative;
+  /* Scroll snap alignment - centers each card when scrolling */
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+
+/* Card Hover Effect - Lift and Shadow */
+section > div:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 113, 197, 0.2);
+}
+
+/* Year Styling */
+section > div h2 {
+  font-size: 2rem;
+  color: #0071C5;
+  font-weight: 700;
+}
+
+/* Title Styling */
+section > div h3 {
+  font-size: 1.3rem;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Image Placeholder Styling */
+section > div img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  background-color: #e0e0e0;
+}
+
+/* Description Text - Hidden by Default, Revealed on Hover */
+section > div p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.7;
+  /* Initially limit height and hide overflow */
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.4s ease, margin-top 0.4s ease;
+}
+
+/* Reveal Text on Hover */
+section > div:hover p {
+  max-height: 300px;
+  opacity: 1;
+  margin-top: 8px;
+}
+
+/* Bottom Instruction Text */
+body > p {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  font-style: italic;
+  background-color: white;
+  margin: 0;
+}
+
+/* Mobile Responsive - Vertical Stack */
+@media (max-width: 768px) {
+  /* Change to vertical layout */
+  section {
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 30px 20px;
+  }
+  
+  /* Full width cards on mobile */
+  section > div {
+    min-width: 100%;
+    max-width: 100%;
+  }
+  
+  /* Always show text on mobile */
+  section > div p {
+    max-height: none;
+    opacity: 1;
+    margin-top: 8px;
+  }
+  
+  /* Reduce header text size */
+  header h1 {
+    font-size: 2rem;
+  }
+  
+  header p {
+    font-size: 1rem;
+  }
+}
